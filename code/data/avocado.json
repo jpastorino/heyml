@@ -1,0 +1,16 @@
+{
+    "id":"CONTINUOUS",
+	"Date":"CONTINUOUS",
+	"AveragePrice":"CONTINUOUS",
+	"Total Volume":"CONTINUOUS",
+	"4046":"CONTINUOUS",
+	"4225":"CONTINUOUS",
+	"4770":"CONTINUOUS",
+	"Total Bags":"CONTINUOUS",
+	"Small Bags":"CONTINUOUS",
+	"Large Bags":"CONTINUOUS",
+	"XLarge Bags":"CONTINUOUS",
+	"type":"CATEGORICAL",
+	"year":"CONTINUOUS",
+	"target": "CATEGORICAL"
+}

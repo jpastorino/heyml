@@ -1,0 +1,23 @@
+{
+    "battery_power":"CONTINUOUS",
+	"blue":"CATEGORICAL",
+	"clock_speed":"CONTINUOUS",
+	"dual_sim":"CATEGORICAL",
+	"fc":"CONTINUOUS",
+	"four_g":"CATEGORICAL",
+	"int_memory":"CONTINUOUS",
+	"m_dep":"CONTINUOUS",
+	"mobile_wt":"CONTINUOUS",
+	"n_cores":"CONTINUOUS",
+	"pc":"CONTINUOUS",
+	"px_height":"CONTINUOUS",
+	"px_width":"CONTINUOUS",
+	"ram":"CONTINUOUS",
+	"sc_h":"CONTINUOUS",
+	"sc_w":"CONTINUOUS",
+	"talk_time":"CONTINUOUS",
+	"three_g":"CATEGORICAL",
+	"touch_screen":"CATEGORICAL",
+	"wifi":"CATEGORICAL",
+	"target":"CATEGORICAL"
+}

@@ -1,0 +1,11 @@
+{
+  "Sex":"CATEGORICAL",
+  "Length":"CONTINUOUS",
+  "Diameter":"CONTINUOUS",
+  "Height":"CONTINUOUS",
+  "Whole_weight":"CONTINUOUS",
+  "Shucked_weight":"CONTINUOUS",
+  "Viscera_weight":"CONTINUOUS",
+  "Shell_weight":"CONTINUOUS",
+  "target":"CONTINUOUS"
+}

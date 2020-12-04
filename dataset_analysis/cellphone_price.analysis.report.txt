@@ -1,0 +1,83 @@
+Data Anslysis Report for cellphone_price
+2020-09-16
+Computing Skewness
+----------------------------------------
+                Feature                  |    Skewness    
+------------------------------------------------------------
+             battery_power               |    0.03187 
+                  blue                   |    0.02000 
+              clock_speed                |    0.17795 
+                dual_sim                 |   -0.03801 
+                   fc                    |    1.01905 
+                 four_g                  |   -0.08608 
+               int_memory                |    0.05785 
+                 m_dep                   |    0.08902 
+               mobile_wt                 |    0.00655 
+                n_cores                  |    0.00362 
+                   pc                    |    0.01729 
+               px_height                 |    0.66577 
+                px_width                 |    0.01478 
+                  ram                    |    0.00662 
+                  sc_h                   |   -0.09881 
+                  sc_w                   |    0.63331 
+               talk_time                 |    0.00950 
+                three_g                  |   -1.22722 
+              touch_screen               |   -0.01200 
+                  wifi                   |   -0.02800 
+              price_range                |    0.00000 
+Plot was generated and stored at >>>./output/cellphone_price.analysis.skewness.png
+
+
+Computing Kurtosis
+----------------------------------------
+                Feature                  |    Kurtosis    
+------------------------------------------------------------
+             battery_power               |   -1.22408 
+                  blue                   |   -1.99960 
+              clock_speed                |   -1.32311 
+                dual_sim                 |   -1.99856 
+                   fc                    |    0.27339 
+                 four_g                  |   -1.99259 
+               int_memory                |   -1.21603 
+                 m_dep                   |   -1.27416 
+               mobile_wt                 |   -1.21035 
+                n_cores                  |   -1.22968 
+                   pc                    |   -1.17157 
+               px_height                 |   -0.31807 
+                px_width                 |   -1.18604 
+                  ram                    |   -1.19193 
+                  sc_h                   |   -1.19081 
+                  sc_w                   |   -0.39155 
+               talk_time                 |   -1.21855 
+                three_g                  |   -0.49393 
+              touch_screen               |   -1.99986 
+                  wifi                   |   -1.99922 
+              price_range                |   -1.36000 
+Plot was generated and stored at >>>./output/cellphone_price.analysis.kurtosis.png
+
+
+Testing If Data Follows Normal Distribution
+----------------------------------------
+                Feature                  | Shapiro P-Value |    Normally Dist    
+---------------------------------------------------------------------------------
+battery_power                            | 4.009382346E-25 |          NO         
+blue                                     | 0.000000000E+00 |          NO         
+clock_speed                              | 1.138689255E-32 |          NO         
+dual_sim                                 | 0.000000000E+00 |          NO         
+fc                                       | 1.739230333E-37 |          NO         
+four_g                                   | 0.000000000E+00 |          NO         
+int_memory                               | 6.445664127E-25 |          NO         
+m_dep                                    | 2.036018094E-30 |          NO         
+mobile_wt                                | 6.498877726E-25 |          NO         
+n_cores                                  | 2.750651139E-30 |          NO         
+pc                                       | 2.860286136E-25 |          NO         
+px_height                                | 2.884661260E-26 |          NO         
+px_width                                 | 4.253962014E-24 |          NO         
+ram                                      | 1.868648190E-24 |          NO         
+sc_h                                     | 3.464188372E-26 |          NO         
+sc_w                                     | 1.055672499E-27 |          NO         
+talk_time                                | 5.678931387E-26 |          NO         
+three_g                                  | 0.000000000E+00 |          NO         
+touch_screen                             | 0.000000000E+00 |          NO         
+wifi                                     | 0.000000000E+00 |          NO         
+price_range                              | 2.325021800E-39 |          NO         

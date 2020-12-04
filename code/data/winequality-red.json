@@ -1,0 +1,14 @@
+{
+"fixed acidity":"CONTINUOUS",
+"volatile acidity":"CONTINUOUS",
+"citric acid":"CONTINUOUS",
+"residual sugar":"CONTINUOUS",
+"chlorides":"CONTINUOUS",
+"free sulfur dioxide":"CONTINUOUS",
+"total sulfur dioxide":"CONTINUOUS",
+"density":"CONTINUOUS",
+"pH":"CONTINUOUS",
+"sulphates":"CONTINUOUS",
+"alcohol":"CONTINUOUS",
+"target":"CONTINUOUS"
+}

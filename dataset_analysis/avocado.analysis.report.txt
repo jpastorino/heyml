@@ -1,0 +1,62 @@
+Data Anslysis Report for avocado
+2020-09-16
+Computing Skewness
+----------------------------------------
+                Feature                  |    Skewness    
+------------------------------------------------------------
+               Unnamed: 0                |    0.10832       
+                  Date                   |    0.00012       Encoding Date dType: object
+              AveragePrice               |    0.58026       
+              Total Volume               |    9.00695       
+                  4046                   |    8.64751       
+                  4225                   |    8.94173       
+                  4770                   |   10.15856       
+               Total Bags                |    9.75527       
+               Small Bags                |    9.53988       
+               Large Bags                |    9.79565       
+              XLarge Bags                |   13.13867       
+                  type                   |    0.00033       Encoding type dType: object
+                  year                   |    0.21532       
+                 region                  |    0.00003       Encoding region dType: object
+Plot was generated and stored at >>>./output/avocado.analysis.skewness.png
+
+
+Computing Kurtosis
+----------------------------------------
+                Feature                  |    Kurtosis    
+------------------------------------------------------------
+               Unnamed: 0                |   -1.25435       
+                  Date                   |   -1.20004       Encoding Date dType: object
+              AveragePrice               |    0.32478       
+              Total Volume               |   92.07890       
+                  4046                   |   86.78500       
+                  4225                   |   91.92350       
+                  4770                   |  132.52679       
+               Total Bags                |  112.24107       
+               Small Bags                |  106.98324       
+               Large Bags                |  117.96682       
+              XLarge Bags                |  233.53828       
+                  type                   |   -2.00000       Encoding type dType: object
+                  year                   |   -1.03279       
+                 region                  |   -1.20078       Encoding region dType: object
+Plot was generated and stored at >>>./output/avocado.analysis.kurtosis.png
+
+
+Testing If Data Follows Normal Distribution
+----------------------------------------
+                Feature                  | Shapiro P-Value |    Normally Dist    
+---------------------------------------------------------------------------------
+Unnamed: 0                               | 0.000000000E+00 |          NO                
+Date                                     | 0.000000000E+00 |          NO                Encoding Date dType: object
+AveragePrice                             | 2.802596929E-45 |          NO                
+Total Volume                             | 0.000000000E+00 |          NO                
+4046                                     | 0.000000000E+00 |          NO                
+4225                                     | 0.000000000E+00 |          NO                
+4770                                     | 0.000000000E+00 |          NO                
+Total Bags                               | 0.000000000E+00 |          NO                
+Small Bags                               | 0.000000000E+00 |          NO                
+Large Bags                               | 0.000000000E+00 |          NO                
+XLarge Bags                              | 0.000000000E+00 |          NO                
+type                                     | 0.000000000E+00 |          NO                Encoding type dType: object
+year                                     | 0.000000000E+00 |          NO                
+region                                   | 0.000000000E+00 |          NO                Encoding region dType: object

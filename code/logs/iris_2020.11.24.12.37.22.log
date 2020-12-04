@@ -1,0 +1,22 @@
+INFO:root:1606246642.813358=> Start processing file iris.
+INFO:root:1606246642.81817=> Dataset loaded.
+INFO:root:1606246642.818332=> Starting Adj. Matrix.
+INFO:root:1606246642.818393=> Start PDF Computation.
+INFO:root:1606246642.838801=> End PDF Computation.
+INFO:root:1606246643.071685=> Done Adj. Matrix.
+INFO:root:1606246643.0718029=> Start N_Cluster optimization.
+INFO:root:1606246643.071857=> Start Clustering. N_Clusters:2
+INFO:root:1606246643.102985=> Done Clustering.
+INFO:root:1606246643.103395=> Start Clustering. N_Clusters:3
+INFO:root:1606246643.135513=> Done Clustering.
+INFO:root:1606246643.136192=> Start Clustering. N_Clusters:4
+INFO:root:1606246643.159585=> Done Clustering.
+INFO:root:1606246643.1606011=> Start Clustering. N_Clusters:5
+INFO:root:1606246643.182483=> Done Clustering.
+INFO:root:1606246643.183127=> Cluster Optimization Losses: [0. 0. 0. 0.].
+INFO:root:1606246643.183363=> Done N_Cluster optimization.
+INFO:root:1606246643.183476=> For ../data/iris.csv dataset, Best cluster size = 5.
+INFO:root:1606246643.183556=> Start Clustering. N_Clusters:5
+INFO:root:1606246643.2063801=> Done Clustering.
+INFO:root:1606246643.206655=> Start Ranking.
+INFO:root:1606246643.426614=> Done Raking.
