@@ -1,5 +1,10 @@
 
 # Hey ML, what can you do for me?
+This site contains source code and extra information of the paper, published in the IEEE International Conference on Artificial Intelligence &
+Knowledge Engineering 2020. [IEEE AIKE 2020](https://www.ieee-aike.org/)
+
+Publication link: [TBA](https://ieeexplore.ieee.org/Xplore/home.jsp)
+
 ## Authors
 - [Javier Pastorino](https://cse.ucdenver.edu/~pastorij)
 - [Ashis K. Biswas](https://cse.ucdenver.edu/~biswasa)
