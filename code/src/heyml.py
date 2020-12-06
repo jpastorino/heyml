@@ -8,11 +8,17 @@ import numpy as np
 from time import time
 from datetime import datetime
 from datasets.GraphDatasetMngr import DatasetMngrCSV
+from heyml_stuff import main_menu, text_on_box, display_recommendations
 
 
 # --------------------------------------------------------------------------------------------------------------------
 def print_recommendations(ranked):
-    """ Prints the recommendations """
+    """
+    Prints the recommendations
+    :param ranked: ranked recommendations.
+    :return:
+    """
+
     table_width = 240
     elements_width = table_width - 4 - 7 - 15
     header_format = "|{:^7}|{:^14} |{:<" + str(elements_width) + "}|"
@@ -32,7 +38,13 @@ def print_recommendations(ranked):
 
 # --------------------------------------------------------------------------------------------------------------------
 def print_recommendations_tabulate(ranked, tab_format="fancy_grid"):
-    """Prints the recommendations in tabulated format. https://pypi.org/project/tabulate/"""
+    """
+    Prints the recommendations in tabulated format. https://pypi.org/project/tabulate/
+    :param ranked: Ranked recommendations.
+    :param tab_format: tabulate format. default "fancy_grid"
+    :return:
+    """
+
     tab_width = 200
     table = []
     rank_i = 0
@@ -52,7 +64,14 @@ def print_recommendations_tabulate(ranked, tab_format="fancy_grid"):
 
 
 # --------------------------------------------------------------------------------------------------------------------
-def execute_test_file(datafile_name, log_key, details=False):
+def process_dataset_file(datafile_name, log_key, details=False):
+    """
+    Given a dataset, process the file with the HeyML black Box.
+    :param datafile_name:  filename in the ../data directory
+    :param log_key: postfix to add to the log file for identification (e.g. datetime.)
+    :param details: If shows Details True, will print internal ranking.
+    :return: None
+    """
     file_name = "../data/" + datafile_name + ".csv"
     with open("../data/" + datafile_name + ".json") as json_file:
         metadata = json.load(json_file)
@@ -61,24 +80,23 @@ def execute_test_file(datafile_name, log_key, details=False):
 
     logging.info("{}=> Start processing file {}.".format(time(), datafile_name))
     start_time = time()
-    print("#" * 95)
-    print("----- Running File: {:<60} -----\n".format(file_name))
-
+    text_on_box("Processing File: "+file_name, 120)
     mngr = DatasetMngrCSV(filename=file_name, metadata=metadata, file_has_header=True)
     mngr.load()
     logging.info("{}=> Dataset loaded.".format(time()))
 
     n_clusters = np.max([2, (mngr.number_features // 2) + 1])
 
-    print("##### Number of Features: {:2d}.-".format(mngr.number_features))
-    print("##### Number of Examples: {:2d}.-".format(mngr.number_data_samples))
-    print("##### Number of Clusters: To be optimized.-")
+    # Printing data summary
+    print(u"\u2593" * 6 + f'''{f""" Number of Features: {mngr.number_features:2d}""":40}'''+u"\u2593" * 6 )
+    print(u"\u2593" * 6 + f'''{f""" Number of Examples: {mngr.number_data_samples:2d}""":40}''' + u"\u2593" * 6)
+    print(u"\u2593" * 6 + f'''{f""" Number of Clusters: To be optimized.""":40}''' + u"\u2593" * 6)
 
-    mngr.generate_clusters(n_clusters=n_clusters, optimize_n_cluster=True)
-
+    best_n_cluster = mngr.generate_clusters(n_clusters=n_clusters, optimize_n_cluster=True)
+    print(u"\u2593" * 6 + f'''{f""" Optimal Number of Clusters: {best_n_cluster:2d}""":40}''' + u"\u2593" * 6)
     if details:
-        print("##### Feature Cluster Map: {}.-".format(mngr.cluster_array))
-        print("##### Cluster Elements: {}.-".format(mngr.cluster_element_list))
+        print(u"\u2593" * 6 + f'''{f""" Feature Cluster Map: {mngr.cluster_array}""":40}''' + u"\u2593" * 6)
+        print(u"\u2593" * 6 + f'''{f""" Cluster Elements: {mngr.cluster_element_list}""":40}''' + u"\u2593" * 6)
 
     ranked = mngr.rank_datasets()
     if details:
@@ -89,26 +107,12 @@ def execute_test_file(datafile_name, log_key, details=False):
             print("Evaluation Score is {} for the target in top-{}".format(
                 mngr.evaluate(ranked, target_name="target", top_k=top_k), top_k))
 
-    print()
-    header = "      Machine Learning problem recommendations for {}".format(file_name)
-    print(header)
-    print("=" * (len(header) + 6))
-    scores = []
-    for row in ranked:
-        scores.append(row[1])
-    scores = np.array(scores)
-
-    scores = np.exp(scores) / sum(np.exp(scores))
-    for row_no in range(3):
-        if scores[row_no] * 100 >= 1:
-            print("With a {:^3.0f}% confidence we recommend that {} can be predicted by a machine learning task.".
-                  format(scores[row_no] * 100, str(ranked[row_no][0])))
+    # ########## PRINTING RECOMMENDATIONS ###########
+    display_recommendations(ranked, file_name)
 
     print()
     end_time = time()
     print("Pipeline ran in {:.2f} sec.".format(end_time - start_time))
-    print("." * 95)
-    print("\n\n")
     pass
 
 
@@ -129,18 +133,9 @@ if __name__ == "__main__":
         if file.endswith(".csv"):
             files.append(file[:-4])
 
-    files.sort()
-    for i, file in enumerate(files):
-        print("{} - {}".format(i + 1, file))
-    print("-" * 30)
-    selection = int(input("Choose file to process [1-{}]:".format(len(files))))
+    filename = main_menu(files)
 
-    if not selection >= 1 and selection <= len(files):
-        print("Invalid Selection. Program Terminated.")
-        exit(1)
-
-    filename = files[selection - 1]
-    print("Processing {}".format(filename))
+    print(f"{filename} Dataset File Selected")
     print()
 
-    execute_test_file(filename, datetime.today().strftime("%Y.%m.%d.%H.%M.%S"), details=True)
+    process_dataset_file(filename, datetime.today().strftime("%Y.%m.%d.%H.%M.%S"), details=False)
