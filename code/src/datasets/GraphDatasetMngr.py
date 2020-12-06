@@ -205,7 +205,6 @@ class DatasetMngrCSV(DatasetMngr):
         best_n_cluster = np.where(loss_values == loss_values.max())[-1][-1] + 2
         logging.info("{}=> Done N_Cluster optimization.".format(time()))
         logging.info("{}=> For {} dataset, Best cluster size = {}.".format(time(), self.filename, best_n_cluster))
-        print("##### Optimal Number of Clusters: {:2d}.-".format(best_n_cluster))
 
         self._do_clustering(best_n_cluster, cluster_algorithm)
 
@@ -244,9 +243,9 @@ class DatasetMngrCSV(DatasetMngr):
 
         # ## DO CLUSTERING
         if optimize_n_cluster:
-            self._optimize_number_clusters(cluster_algorithm)
+            return self._optimize_number_clusters(cluster_algorithm)
         else:
-            self._do_clustering(n_clusters, cluster_algorithm)
+            return self._do_clustering(n_clusters, cluster_algorithm)
 
         pass
 
