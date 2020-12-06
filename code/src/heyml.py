@@ -12,9 +12,9 @@ from heyml_stuff import main_menu, text_on_box, display_recommendations
 
 
 # --------------------------------------------------------------------------------------------------------------------
-def print_recommendations_tabulate(ranked, tab_format="fancy_grid"):
+def print_ranked_results(ranked, tab_format="fancy_grid"):
     """
-    Prints the recommendations in tabulated format. https://pypi.org/project/tabulate/
+    Prints the ranked results in tabulated format. https://pypi.org/project/tabulate/
     :param ranked: Ranked recommendations.
     :param tab_format: tabulate format. default "fancy_grid"
     :return:
@@ -76,7 +76,7 @@ def process_dataset_file(datafile_name, log_key, details=False):
     ranked = mngr.rank_datasets()
     if details:
         print()
-        print_recommendations_tabulate(ranked, "fancy_grid")
+        print_ranked_results(ranked, "fancy_grid")
         print()
         for top_k in [5, 10, 20, 50]:
             print("Evaluation Score is {} for the target in top-{}".format(
@@ -113,4 +113,4 @@ if __name__ == "__main__":
     print(f"{filename} Dataset File Selected")
     print()
 
-    process_dataset_file(filename, datetime.today().strftime("%Y.%m.%d.%H.%M.%S"), details=True)
+    process_dataset_file(filename, datetime.today().strftime("%Y.%m.%d.%H.%M.%S"), details=False)
