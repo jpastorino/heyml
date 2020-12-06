@@ -12,31 +12,6 @@ from heyml_stuff import main_menu, text_on_box, display_recommendations
 
 
 # --------------------------------------------------------------------------------------------------------------------
-def print_recommendations(ranked):
-    """
-    Prints the recommendations
-    :param ranked: ranked recommendations.
-    :return:
-    """
-
-    table_width = 240
-    elements_width = table_width - 4 - 7 - 15
-    header_format = "|{:^7}|{:^14} |{:<" + str(elements_width) + "}|"
-    col_format = "|{:^7}|{:>14.8f} |{:<" + str(elements_width) + "}|"
-
-    print("+" + ("-" * (table_width - 2)) + "+")
-    print(str("|{:^" + str(table_width - 2) + "}|").format("-- RANKED LIST OF TARGET FEATURES -- "))
-    print("|" + ("-" * (table_width - 2)) + "|")
-    print(header_format.format("INDEX", "SCORE", " ELEMENTS"))
-    print("|" + ("-" * 7) + "+" + ("-" * 14) + "-+" + ("-" * (table_width - 7 - 15 - 4)) + "|")
-    rank_i = 0
-    for ranked_tuple in ranked:
-        print(col_format.format("#" + str(rank_i), ranked_tuple[1], str(ranked_tuple[0])))
-        rank_i += 1
-    print("-" * table_width)
-
-
-# --------------------------------------------------------------------------------------------------------------------
 def print_recommendations_tabulate(ranked, tab_format="fancy_grid"):
     """
     Prints the recommendations in tabulated format. https://pypi.org/project/tabulate/
@@ -138,4 +113,4 @@ if __name__ == "__main__":
     print(f"{filename} Dataset File Selected")
     print()
 
-    process_dataset_file(filename, datetime.today().strftime("%Y.%m.%d.%H.%M.%S"), details=False)
+    process_dataset_file(filename, datetime.today().strftime("%Y.%m.%d.%H.%M.%S"), details=True)
