@@ -1,6 +1,4 @@
 {
-"instant":"CONTINUOUS",
-"dteday":"CONTINUOUS",
 "season":"CATEGORICAL",
 "yr":"CONTINUOUS",
 "mnth":"CONTINUOUS",
