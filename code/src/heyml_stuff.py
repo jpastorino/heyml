@@ -79,7 +79,7 @@ def display_recommendations(ranked: list, file_name: str):
 
     # Compute Screen-width
     for row_no in range(len(scores)):
-        if scores[row_no] * 100 > 0:
+        if scores[row_no] * 100 >= 0.1:
             line_len = len(rec_format.format(scores[row_no] * 100, str(ranked[row_no][0])))
             if line_len > screen_width:
                 screen_width = line_len + 5
@@ -93,7 +93,7 @@ def display_recommendations(ranked: list, file_name: str):
     print(u'\u251C' + u'\u2500' * screen_width + u'\u2524')
 
     for row_no in range(len(scores)):
-        if scores[row_no] * 100 > 0:
+        if scores[row_no] * 100 >= 0.1:
             rec_text = rec_format.format(scores[row_no] * 100, str(ranked[row_no][0]))
             print(u'\u2502' + f"""{rec_text:{screen_width}}""" + u'\u2502')
 
