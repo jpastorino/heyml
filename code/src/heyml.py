@@ -65,10 +65,10 @@ def process_dataset_file(datafile_name, log_key, details=False):
     # Printing data summary
     print(u"\u2593" * 6 + f'''{f""" Number of Features: {mngr.number_features:2d}""":40}'''+u"\u2593" * 6 )
     print(u"\u2593" * 6 + f'''{f""" Number of Examples: {mngr.number_data_samples:2d}""":40}''' + u"\u2593" * 6)
-    print(u"\u2593" * 6 + f'''{f""" Number of Clusters: To be optimized.""":40}''' + u"\u2593" * 6)
+    # print(u"\u2593" * 6 + f'''{f""" Number of Clusters: To be optimized.""":40}''' + u"\u2593" * 6)
 
     best_n_cluster = mngr.generate_clusters(n_clusters=n_clusters, optimize_n_cluster=True)
-    print(u"\u2593" * 6 + f'''{f""" Optimal Number of Clusters: {best_n_cluster:2d}""":40}''' + u"\u2593" * 6)
+    print(u"\u2593" * 6 + f'''{f""" Optimized Number of Clusters: {best_n_cluster:2d}""":40}''' + u"\u2593" * 6)
     if details:
         print(u"\u2593" * 6 + f'''{f""" Feature Cluster Map: {mngr.cluster_array}""":40}''' + u"\u2593" * 6)
         print(u"\u2593" * 6 + f'''{f""" Cluster Elements: {mngr.cluster_element_list}""":40}''' + u"\u2593" * 6)
