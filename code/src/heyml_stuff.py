@@ -1,4 +1,13 @@
 import numpy as np
+from os import system, name
+
+
+# --------------------------------------------------------------------------------------------------------------------
+def clear_screen():
+    if name == 'nt':  # for windows
+        _ = system('cls')
+    else:             # for mac and linux(here, os.name is 'posix')
+        _ = system('clear')
 
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -22,6 +31,7 @@ def main_menu(files: list) -> str:
     :param files: filename lists.
     :return: the selected filename.
     """
+    clear_screen()
 
     files.sort()
 
@@ -33,10 +43,10 @@ def main_menu(files: list) -> str:
     print(u'\u255F' + u'\u2500' * menu_width + u'\u2562')
 
     for i, file in enumerate(files):
-        print(u'\u2551' + f"""{i+1:3} - {file:{menu_width-6}}""" + u'\u2551')
+        print(u'\u2551' + f"""{i + 1:3} - {file:{menu_width - 6}}""" + u'\u2551')
     print(u'\u255A' + u'\u2550' * menu_width + u'\u255D')
 
-    selection = int(input(u"\u2593"*20+" Choose file to process [1-{}]".format(len(files)) + u"\u25B7" + " "))
+    selection = int(input(u"\u2593" * 20 + " Choose file to process [1-{}]".format(len(files)) + u"\u25B7" + " "))
 
     if not selection >= 1 and selection <= len(files):
         print("Invalid Selection. Program Terminated.")
@@ -56,13 +66,9 @@ def display_recommendations(ranked: list, file_name: str):
     :param file_name: full relative filename and path of the dataset.
     :return: None
     """
-
+    rec_format = "With a {:^3.0f}% confidence we recommend that {} can be predicted by a machine learning task."
     screen_width = 120
     parsed_filename = file_name.split("/")[-1]
-    print()
-    print(u'\u250C' + u'\u2500' * screen_width + u'\u2510')
-    print(u'\u2502' + f"""{f'''Machine Learning Problem Recommendations for {parsed_filename}''':^{screen_width}}""" + u'\u2502')
-    print(u'\u251C' + u'\u2500' * screen_width + u'\u2524')
 
     scores = []
     for row in ranked:
@@ -70,11 +76,26 @@ def display_recommendations(ranked: list, file_name: str):
     scores = np.array(scores)
 
     scores = np.exp(scores) / sum(np.exp(scores))
-    for row_no in range(3):
+
+    # Compute Screen-width
+    for row_no in range(len(scores)):
         if scores[row_no] * 100 >= 1:
-            rec_text = "With a {:^3.0f}% confidence we recommend that {} can be predicted by a machine learning task."\
-                    .format(scores[row_no] * 100, str(ranked[row_no][0]))
-            print(u'\u2502' + f"""{rec_text:{screen_width}}"""+ u'\u2502')
+            line_len = len(rec_format.format(scores[row_no] * 100, str(ranked[row_no][0])))
+            if line_len > screen_width:
+                screen_width = line_len + 5
+
+    # Display
+
+    print()
+    print(u'\u250C' + u'\u2500' * screen_width + u'\u2510')
+    print(
+        u'\u2502' + f"""{f'''Machine Learning Problem Recommendations for {parsed_filename}''':^{screen_width}}""" + u'\u2502')
+    print(u'\u251C' + u'\u2500' * screen_width + u'\u2524')
+
+    for row_no in range(len(scores)):
+        if scores[row_no] * 100 >= 1:
+            rec_text = rec_format.format(scores[row_no] * 100, str(ranked[row_no][0]))
+            print(u'\u2502' + f"""{rec_text:{screen_width}}""" + u'\u2502')
 
     print(u'\u2514' + u'\u2500' * screen_width + u'\u2518')
     pass
