@@ -1,0 +1,14 @@
+{
+"id":"CONTINUOUS",
+"Gender":"CONTINUOUS",
+"Age":"CONTINUOUS",
+"Driving_License":"CONTINUOUS",
+"Region_Code":"CONTINUOUS",
+"Previously_Insured":"CONTINUOUS",
+"Vehicle_Age":"CONTINUOUS",
+"Vehicle_Damage":"CONTINUOUS",
+"Annual_Premium":"CONTINUOUS",
+"Policy_Sales_Channel":"CONTINUOUS",
+"Vintage":"CONTINUOUS",
+"target":"CATEGORICAL"
+}
