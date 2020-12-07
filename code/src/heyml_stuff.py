@@ -66,7 +66,7 @@ def display_recommendations(ranked: list, file_name: str):
     :param file_name: full relative filename and path of the dataset.
     :return: None
     """
-    rec_format = "With a {:^3.0f}% confidence we recommend that {} can be predicted by a machine learning task."
+    rec_format = "With a {:3.1f}% confidence, we recommend that {} can be predicted by a machine learning task."
     screen_width = 120
     parsed_filename = file_name.split("/")[-1]
 
@@ -79,7 +79,7 @@ def display_recommendations(ranked: list, file_name: str):
 
     # Compute Screen-width
     for row_no in range(len(scores)):
-        if scores[row_no] * 100 >= 1:
+        if scores[row_no] * 100 > 0:
             line_len = len(rec_format.format(scores[row_no] * 100, str(ranked[row_no][0])))
             if line_len > screen_width:
                 screen_width = line_len + 5
@@ -93,7 +93,7 @@ def display_recommendations(ranked: list, file_name: str):
     print(u'\u251C' + u'\u2500' * screen_width + u'\u2524')
 
     for row_no in range(len(scores)):
-        if scores[row_no] * 100 >= 1:
+        if scores[row_no] * 100 > 0:
             rec_text = rec_format.format(scores[row_no] * 100, str(ranked[row_no][0]))
             print(u'\u2502' + f"""{rec_text:{screen_width}}""" + u'\u2502')
 
