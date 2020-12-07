@@ -1,5 +1,5 @@
 {    
-    "mpg":"CONTINUOUS",
+    "target":"CONTINUOUS",
     "cylinders":"CONTINUOUS",
     "displacement":"CONTINUOUS",
     "horsepower":"CONTINUOUS",
@@ -7,5 +7,5 @@
     "acceleration":"CONTINUOUS",
     "model year":"CONTINUOUS",
     "origin":"CONTINUOUS",
-    "target":"CATEGORICAL"
+    "car name":"CATEGORICAL"
 }
