@@ -1,0 +1,9 @@
+{
+"age":"CONTINUOUS",
+"sex":"CATEGORICAL",
+"bmi":"CONTINUOUS",
+"children":"CONTINUOUS",
+"smoker":"CATEGORICAL",
+"region":"CATEGORICAL",
+"target":"CONTINUOUS"
+}
