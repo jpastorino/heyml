@@ -101,7 +101,7 @@ if __name__ == "__main__":
     np.set_printoptions(linewidth=320)
 
     if not sys.warnoptions:
-        warnings.simplefilter("ignore")  # Ignore warnings
+        warnings.simplefilter("ignore")     # Ignore warnings
 
     files = []
     for file in os.listdir("../data"):
