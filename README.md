@@ -52,6 +52,17 @@ The following are the datasets used from the UCI Machine Learning Repository.
     - [Download Link](https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/)
     - *Cortez P., Cerdeira A., Almeida F., Matos T., and Reis J. 2009. Modeling wine preferences by data mining from physicochemical properties. Decision Support Systems 47, 4 (11 2009), 547–553. https://doi.org/10.1016/j.dss.2009.05.016*
 
+## Kaggle Real-Word Datasets:
+- **Avocado:** 
+    - [Download] (https://www.kaggle.com/neuromusic/avocado-prices)
+- **Cellphone Prices:** 
+    - [Download Link](https://www.kaggle.com/iabhishekofficial/mobile-price-classification)
+- **Car Insurance:** 
+    - [Download Link](https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction?select=train.csv)
+- **Health Insurance:** 
+    - [Download Link](https://www.kaggle.com/mirichoi0218/insurance)
+
+
 ## Real-World Datasets Distribution Analysis
 We used two "real-world" datasets extracted from Kaggle: *Avocado* dataset and *Cellphone price* dataset.
 Below is the report of the data analysis we conducted during our experiments.
