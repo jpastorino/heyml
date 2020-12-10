@@ -66,7 +66,7 @@ def display_recommendations(ranked: list, file_name: str):
     :param file_name: full relative filename and path of the dataset.
     :return: None
     """
-    rec_format = "With a {:3.1f}% confidence, we recommend that {} can be predicted by a machine learning task."
+    rec_format = "With a {:>4.1f}% confidence, we recommend that {} can be predicted by a machine learning task."
     screen_width = 120
     parsed_filename = file_name.split("/")[-1]
 
