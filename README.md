@@ -3,7 +3,9 @@
 This site contains source code and extra information of the paper, published in the IEEE International Conference on Artificial Intelligence &
 Knowledge Engineering 2020. [IEEE AIKE 2020](https://www.ieee-aike.org/)
 
-Publication link: [TBA](https://ieeexplore.ieee.org/Xplore/home.jsp)
+Publication link: [Hey ML, what can you do for me?](https://ieeexplore.ieee.org/document/9355481)
+
+J. Pastorino and A. K. Biswas, "Hey ML, what can you do for me?," 2020 IEEE Third International Conference on Artificial Intelligence and Knowledge Engineering (AIKE), 2020, pp. 116-119, doi: 10.1109/AIKE48582.2020.00023.
 
 ## Authors
 - [Javier Pastorino](https://cse.ucdenver.edu/~pastorij)
